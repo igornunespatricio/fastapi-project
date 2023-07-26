@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Detection</title>
+</head>
+<body>
+    <div class="content">
+        <h1 class="title">Object Detection Page.</h1>
+        <form action="{{ url_for('upload_image') }}" method="post" enctype="multipart/form-data">
+            <label>Choose an image to submit</label>
+            <input type="file" name="file"><br>
+            <input type="submit" value="Submit">
+        </form>
+        <div>
+            {% if img %}
+            <h1>Rendered Image</h1>
+            <img src="data:image/jpeg;base64,{{ img }}" />
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
