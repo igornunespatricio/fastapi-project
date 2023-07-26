@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Computer Vision</title>
-    <link href="/static/styles.css" rel="stylesheet">
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
 </head>
-<body>
+<body background="{{ url_for('assets', path='/blue-whale.jpg') }}" >
     <div class="content">
         <h1 class="title">This is going to be a Computer Vision application.</h1>
-        <div class="buttons"></div>
-            <button class="button">Object Detection</button>
-            <button class="button">Object Tracking</button>
-            <button class="button">Image Recognition</button>    
+        <div class="buttons">
+            <button class="button pushable">
+                <span class="front">Object Detection</span>
+            </button>
+            <button class="button pushable">
+                <span class="front">Object Tracking</span>
+            </button>
+            <button class="button pushable">
+                <span class="front">Image Recognition</span>
+            </button>    
         </div>
     </div>
 </body>

@@ -1,7 +1,8 @@
+body {
+    background-size: cover;
+}
 .content {
     text-align: center;
-    margin-top: 1cm;
-    background-color: lightblue;
     display: flex;
     flex-direction: column;
 }
@@ -18,15 +19,37 @@
     align-items: center;
     justify-content: center;
     margin-top: 1cm;
-    border: 2cm;
-    
-    justify-content: space-between;
+    border: 2px;
+    flex-direction: column;
 }
 
 .button {
-    line-height: 70px;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    padding: 20px 50px 20px 50px;
+    text-align: center;
+    width: 50%;
+    border-radius: 20px;
 }
+
+.pushable {
+    background: rgb(6, 6, 160);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+
+  .front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: rgb(101, 101, 206);
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
