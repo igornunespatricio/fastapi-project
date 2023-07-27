@@ -25,19 +25,30 @@ async def object_detection_page(request: Request):
     return templates.TemplateResponse("object-detection.html", {"request": request})
 
 
-@app.post("/object-detection/results")
+@app.post("/object-detection/results", response_class=HTMLResponse)
 async def upload_image(request: Request, file: UploadFile = File(...)):
     try:
-        contents = file.file.read()
+
+        im = Image.open(file.file)
+        if im.mode in ("RGBA", "P"): 
+            im = im.convert("RGB")
+        buf = io.BytesIO()
+        im.save(buf, 'JPEG', quality=50)
+        # to get the entire bytes of the buffer use:
+        # contents = file.file.read()
+        contents = buf.getvalue()
+        buf.seek(0)
+        print(type(im)) # jpeg image
+        print(type(contents))  # bytes image
+
     except Exception as e:
         return {"message": e}
     finally:
         file.file.close()
+        buf.close()
+        im.close()
 
-    # TODO: convert contents to a format that can be read with YOLOv8, write bounding boxes on image, and convert
-    #  back to bytes (same type as the contents variable)
     base64_encoded_image = base64.b64encode(contents).decode("utf-8")
-
     return templates.TemplateResponse("object-detection.html", {"request": request, "img": base64_encoded_image})
 
 
