@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Vision</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    {% block head %}
+
+    {% endblock %}
+</head>
+<body background="{{ url_for('assets', path='/blue-whale.jpg') }}">
+    <div class="main-content">
+        {% block body %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>

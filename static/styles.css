@@ -1,17 +1,47 @@
-body {
-    background-size: cover;
+html{
+    height: 100%;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    height: 100%;
+}
+
+.main-content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    border: solid;
+}
+
 .content {
-    text-align: center;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    border: solid;
+    width: 100%;
 }
 
 .title {
+    display: flex;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(101, 101, 206);
     padding: 1cm;
     color: white;
+}
+
+.image-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
 }
 
 .buttons {
@@ -38,9 +68,9 @@ body {
     padding: 0;
     cursor: pointer;
     outline-offset: 4px;
-  }
+}
 
-  .front {
+.front {
     display: block;
     padding: 12px 42px;
     border-radius: 12px;
@@ -48,8 +78,34 @@ body {
     background: rgb(101, 101, 206);
     color: white;
     transform: translateY(-6px);
-  }
+}
 
-  .pushable:active .front {
+.pushable:active .front {
     transform: translateY(-2px);
-  }
+}
+
+
+
+.data {
+    display: flex;
+    border: solid;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+
+.image-rendered {
+    display: flex;
+    border: solid;
+    flex-grow: 1;
+    width: 50%;
+}
+
+.table-results {
+    border: solid;
+}
+

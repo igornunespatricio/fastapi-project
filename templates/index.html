@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Computer Vision</title>
-    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
-</head>
-<body background="{{ url_for('assets', path='/blue-whale.jpg') }}" >
-    <div class="content">
+{% extends 'layout.html' %}
+
+{% block head %}
+    
+{% endblock %}
+
+{% block body %}
+    <div class="content"> 
         <h1 class="title">This is going to be a Computer Vision application.</h1>
         <div class="buttons">
             <button class="button pushable" onclick="location.href='{{ url_for('object_detection_page') }}';">
@@ -20,5 +19,4 @@
             </button>    
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
