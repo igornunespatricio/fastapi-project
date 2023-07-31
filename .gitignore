@@ -160,10 +160,6 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# testing .py files
-# python files used for testing some codes
-test.py
-
 # files with the weights of the model
 # no need to push this fiels because they are heavy and can be downloaded when using YOLO.
 yolov8s.pt

@@ -19,15 +19,16 @@
                     </div>
                 </form>
                 <div class="image-rendered">
-                    Rendered Image Here!
+<!--                    Rendered Image Here!-->
                     {% if img %}
-                    <h1>Rendered Image</h1>
+<!--                    <h1>Rendered Image</h1>-->
                     <img src="data:image/jpeg;base64,{{ img }}" />
                     {% endif %}
                 </div>
             </div>
             <div class="table-results">
-                insert a table with the results for that image here
+<!--                insert a table with the results for that image here-->
+                {{ results|safe }}
             </div>
         </div>
     </div>
