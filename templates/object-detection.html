@@ -10,24 +10,21 @@
         <div class="image-content">
             <div class="data">
                 <form class="form" action="{{ url_for('upload_image') }}" method="post" enctype="multipart/form-data">
-                    <div>
-                        <span>Image:</span>
-                        <input type="file" name="file"><br>
+                    <div class="upload-image-file">
+                        <span class="label-image-text">Image:</span>
+                        <input class="input-image" type="file" name="file"><br>
                     </div>
-                    <div>
+                    <div class="submit-button">
                         <input type="submit" value="Submit">
                     </div>
                 </form>
                 <div class="image-rendered">
-<!--                    Rendered Image Here!-->
                     {% if img %}
-<!--                    <h1>Rendered Image</h1>-->
-                    <img src="data:image/jpeg;base64,{{ img }}" />
+                    <img class="object-detection-img" src="data:image/jpeg;base64,{{ img }}" />
                     {% endif %}
                 </div>
             </div>
             <div class="table-results">
-<!--                insert a table with the results for that image here-->
                 {{ results|safe }}
             </div>
         </div>
