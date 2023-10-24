@@ -37,9 +37,18 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="table-results">
+            <div class="table-results" id="table">
                 {{ results|safe }}
             </div>
         </div>
+        <div class="export-container">
+            <div class="action">
+                <span class="exporting table">Export table to:</span>
+                <button class="exporting-button">xlsx</button>
+                <button class="exporting-button">xls</button>
+                <button class="exporting-button">csv</button>
+            </div>
+        </div>
     </div>
+    <script src="{{ url_for('scripts', path='/script.js') }}"></script>
 {% endblock %}

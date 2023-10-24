@@ -144,7 +144,50 @@ body {
     object-fit: contain;
     max-width: 100%;  
     max-height: 100%;
-    resize: both;
-    overflow: auto;
+    resize: both; /* used to resize the image */
+    overflow: auto; /* used to resize the image */
 }
 
+.export-container {
+    max-width: 800px;
+    height: auto;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.action {
+    float: right;
+}
+
+.exporting-table {
+    margin-right: 20px;
+}
+
+.exporting-button{
+    padding: 6px 20px;
+}
+
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    position: relative;
+    top: 10px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+thead {
+    background-color: #000000;
+}
+
+tbody:nth-child(even) tr:nth-child(even){
+    background-color: #0000ff;
+}
+
+tbody:nth-child(even) tr:nth-child(odd){
+    background-color: #008000;
+}
