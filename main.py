@@ -44,8 +44,9 @@ def upload_image(request: Request, file: UploadFile = File(...)):
             "request": request,
             "img": contents,
             "results": results
-         }
+        }
     )
+
 
 @app.get('/object-tracking', response_class=HTMLResponse)
 def object_tracking_page(request: Request):

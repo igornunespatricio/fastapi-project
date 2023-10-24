@@ -1,6 +1,19 @@
 {% extends 'layout.html' %}
 
 {% block head %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        #resizable {}
+        #resizable img { text-align: center; margin: 0; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#resizable" ).resizable();
+        } );
+    </script>
     
 {% endblock %}
 
@@ -18,9 +31,9 @@
                         <input type="submit" value="Submit">
                     </div>
                 </form>
-                <div class="image-rendered">
+                <div id="resizable" class="image-rendered ui-widget-content">
                     {% if img %}
-                    <img class="object-detection-img" src="data:image/jpeg;base64,{{ img }}" />
+                    <img class="object-detection-img ui-widget-header" src="data:image/jpeg;base64,{{ img }}" />
                     {% endif %}
                 </div>
             </div>
